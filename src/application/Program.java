@@ -8,6 +8,9 @@ import util.ProductPredicate;
 
 public class Program {
 
+	/**Fazer um programa que, a partir de uma lista de produtos, remova da
+	lista somente aqueles cujo preço mínimo seja 100.**/
+	
 	public static void main(String[] args) {
 		
 		List<Product> list = new ArrayList<>();
@@ -17,7 +20,7 @@ public class Program {
 		list.add(new Product("Tablet", 350.00));
 		list.add(new Product("HD Case", 80.90))
 		;
-		list.removeIf(new ProductPredicate());
+		list.removeIf(Product::testPredicate);
 		
 		for(Product p : list) {
 			System.out.println(p);
